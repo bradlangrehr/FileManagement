@@ -1,5 +1,6 @@
 #include "BagNode.h"
 #include <cstddef>
+#include <fts.h>
 #ifndef BBST_H
 #define BBST_H
 using namespace std;
@@ -8,8 +9,9 @@ class BBST{
  private:
   BagNode* root = NULL;
   BagNode* current = NULL;
-  int data, tally;
-  void doInsert(int data);
+  char* filePath;
+  char* fileName;;
+  void doInsert(char* filePath, char* fileName);
   void doTraverse(BagNode* b);
   bool isBalanced(BagNode* b);
   int getHeight(BagNode* b);
@@ -18,15 +20,15 @@ class BBST{
   void rotateRight(BagNode *b);
   void doubleRotateLeft(BagNode *b);
   void doubleRotateRight(BagNode *b);
-
+  void followFilePath(FTS* f, char** path);
   /*int randomNumber();
   const int min = 1;
   const int max = 10000;*/
   
  public:
   BBST();
-  BBST(int data, int tally);
-  void insert(int data);
+  BBST(char* filePath, char* fileName);
+  void insert(char* filePath, char* fileName);
   void traverse();
   bool balance();
 };

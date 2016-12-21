@@ -4,7 +4,9 @@ using namespace std;
 
 class BagNode{
  private:
-  int dataItem,count;
+  char* filePath;
+  char* fileName;
+  
   BagNode* parent;
   BagNode* left;
   BagNode* right;
@@ -12,17 +14,18 @@ class BagNode{
  public:
   //Constructors
   BagNode();
-  BagNode(int dataItem, int count);
+  BagNode(char* filePath, char* fileName);
 
   //Mutators
-  void setDataItem(int dataItem);
-  void setCount(int count);
+  void setFilePath(char* filePath);
+  void setFileName(char* fileName);
   void setLeft(BagNode* left);
   void setRight(BagNode* right);
+  void setParent(BagNode *parent);
  
   //Accesors
-  int getDataItem();
-  int getCount();
+  char*  getFilePath();
+  char*  getFileName();
   BagNode* getParent();
   BagNode* getLeft();
   BagNode* getRight();
