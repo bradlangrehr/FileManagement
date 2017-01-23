@@ -4,4 +4,4 @@ CFLAGS = -std=c++11 -g -Wall
 TARGET = BBST.exe
 
 FileTrav: $(OBJS)
-	$(CC) $^ $(CFLAGS) -o BBST.exe
+	$(CC) $^ $(CFLAGS) -o $(TARGET)
